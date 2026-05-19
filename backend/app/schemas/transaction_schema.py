@@ -4,6 +4,9 @@ from typing import Optional
 
 from pydantic import BaseModel #base class that you inherit from to define data schemas
 
+from app.schemas.account_schema import AccountBasicResponse
+from app.schemas.category_schema import CategoryBasicResponse
+
 class TransactionCreate(BaseModel):
     type: Optional[str] = None
 
@@ -35,6 +38,10 @@ class TransactionResponse(BaseModel):
     description: Optional[str] 
 
     date: date
+
+    category: Optional[CategoryBasicResponse]
+
+    account: AccountBasicResponse
 
     class Config:
         from_attributes = True

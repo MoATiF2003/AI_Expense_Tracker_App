@@ -23,3 +23,11 @@ class AccountResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+class AccountBasicResponse(BaseModel):
+    id: int
+
+    name: str
+
+    class Config:
+        from_attribute = True
