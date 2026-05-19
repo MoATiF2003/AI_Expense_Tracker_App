@@ -6,7 +6,7 @@ class MockProvider(BaseLLM):
 
         prompt_lower = prompt.lower()
 
-        if "detect intent" in prompt_lower:
+        if "intent classification system" in prompt_lower:
             return {
                 "intent": "create_transaction"
             }
@@ -15,7 +15,7 @@ class MockProvider(BaseLLM):
             return {
                 "amount": 250,
                 "category": "Food",
-                "account": "Cash Wallet",
+                "account": "Fed Account",
                 "transaction_type": "expense",
                 "description": "Lunch"
             }
