@@ -14,6 +14,7 @@ class Account(Base):
 
     name: Mapped[str] = mapped_column(
         String(255),
+        unique=True,
         nullable=False,
     )
 
