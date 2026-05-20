@@ -16,3 +16,7 @@ class CategoryService:
     
     def get_all_categories(self):
         return self.repository.get_all_categories()
+    
+    def get_category_names(self):
+        categories = self.repository.get_all_categories()
+        return [category.name for category in categories]

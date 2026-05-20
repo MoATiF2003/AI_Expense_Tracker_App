@@ -1,34 +1,10 @@
-# Python
+# Python-generated files
 __pycache__/
-*.pyc
-
-# Virtual Environments
-.venv/
-backend/.venv/
-
-# Environment Files
-.env
-backend/.env
-
-# SQLite
-*.db
-
-# Node
-node_modules/
-
-# Vite
+*.py[oc]
+build/
 dist/
+wheels/
+*.egg-info
 
-# VSCode
-.vscode/
-
-# OS Files
-.DS_Store
-
-# Logs
-*.log
-
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
+# Virtual environments
+.venv

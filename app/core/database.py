@@ -7,7 +7,10 @@ from app.models import Account, Category, Transaction
 
 engine = create_engine(         #connection manager to the db (not query running)
     settings.DATABASE_URL,
-    echo=settings.DEBUG     #SQLAlchemy prints SQL queries in terminal (SQL logs)
+    echo=settings.DEBUG,    #SQLAlchemy prints SQL queries in terminal (SQL logs)
+    # connect_args={
+    #     "check_same_thread": False
+    # }
 )
 
 SessionLocal = sessionmaker( #database sessions

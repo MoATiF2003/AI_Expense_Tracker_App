@@ -14,12 +14,21 @@ class MockProvider(BaseLLM):
         if "extract slots" in prompt_lower:
             return {
                 "amount": 250,
-                "category": "Food",
-                "account": "Fed Account",
                 "transaction_type": "expense",
-                "description": "Lunch"
+                "description": "Netflix Subscription"
             }
-
+        
+        if "finance category resolution system" in prompt_lower:
+            if "netflix" in prompt_lower:
+                return {
+                    "matched_category": "Entertainment",
+                    "proposed_new_category": None
+                }
+            return {
+                "matched_category": None,
+                "proposed_new_category": "Subscription"
+            }
+        
         return {
             "message": "Unknown prompt" 
         }

@@ -10,7 +10,6 @@ class SlotValidator:
     def validate_transaction_slots(cls, slots: dict):
         required_field = [
             "amount",
-            "category",
             "account",
             "transaction_type"
         ]
@@ -27,7 +26,8 @@ class SlotValidator:
                 "error": (
                     "Missing required fields"
                 ),
-                "missing_fields": missing_fields
+                "missing_fields": missing_fields,
+                "requires_clarification": True
             }
         
         try:
