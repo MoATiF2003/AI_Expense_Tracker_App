@@ -1,3 +1,5 @@
+from app.ai.prompts.intent_prompt import build_intent_prompt
+
 class IntentAgent:
 
     VALID_INTENTS = [
@@ -11,20 +13,8 @@ class IntentAgent:
         self.llm_provider = llm_provider
 
     async def detect(self, message: str):
-        prompt = f"""
-You are an intent classification system.
+        prompt = build_intent_prompt(message=message)
 
-You must return ONLY one of these intents:
-{self.VALID_INTENTS}
-
-Do not explain.
-Do not add extra text.
-Return ONLY the intent string.
-
-User Message:
-{message}
-"""
-
-        response = await self.llm_provider.generate(prompt)
+        response = await self.llm_provider.generate(prompt=prompt)
 
         return response["intent"]

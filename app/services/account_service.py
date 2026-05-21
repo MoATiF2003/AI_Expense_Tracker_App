@@ -16,3 +16,7 @@ class AccountService:
     
     def get_all_accounts(self):
         return self.repository.get_all_accounts()
+    
+    def get_account_names(self):
+        accounts = self.repository.get_all_accounts()
+        return [account.name for account in accounts]

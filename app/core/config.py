@@ -10,6 +10,8 @@ class Setting(BaseSettings):
 
     DATABASE_URL: str
 
+    GROQ_API_KEY: str
+
     class Config:
         env_file = ".env"
 

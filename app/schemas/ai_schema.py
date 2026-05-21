@@ -7,6 +7,8 @@ class ProposedNewCategorySchema(BaseModel):
     type: str
 
 class ChatRequest(BaseModel):
+    session_id: str
+
     message: str
 
 
@@ -30,6 +32,8 @@ class ChatResponse(BaseModel):
     clarification_question: Optional[str] = None
 
     requires_clarification: Optional[bool] = None
+
+    confirmation_summary: Optional[dict[str, Any]] = None
 
 class ExecuteAIActionRequest(BaseModel):
     intent: str

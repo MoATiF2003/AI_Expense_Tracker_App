@@ -14,6 +14,7 @@ class MockProvider(BaseLLM):
         if "extract slots" in prompt_lower:
             return {
                 "amount": 250,
+                "account": "Fed Account",
                 "transaction_type": "expense",
                 "description": "Netflix Subscription"
             }

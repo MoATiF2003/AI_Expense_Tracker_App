@@ -9,6 +9,4 @@ class ClarificationGenerator:
     def generate_question(cls, missing_fields):
         first_missing_field = missing_fields[0]
 
-        return cls.QUESTIONS.get(first_missing_field,
-            f"Please provide - {first_missing_field}"
-        )
+        return cls.QUESTIONS.get(first_missing_field, f"Please provide - {first_missing_field}")
